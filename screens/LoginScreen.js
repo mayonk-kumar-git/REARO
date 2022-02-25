@@ -1,19 +1,18 @@
-import React, { useState } from "react";
-// import React, { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 
 // ---------------------------------------------------------------------------
 import FormInput from "../components/FormInput";
 import FormButton from "../components/FormButton";
 import SocialButton from "../components/SocialButton";
-// import { AuthContext } from "../navigation/AuthProvider";
+import { AuthContext } from "../navigation/AuthProvider";
 // ---------------------------------------------------------------------------
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  // const { login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   return (
     <View style={styles.container}>
       <Image source={require("../assets/logo.png")} style={styles.logo} />
@@ -36,10 +35,9 @@ export default function LoginScreen({ navigation }) {
       />
       <FormButton
         buttonTitle="Sign In"
-        onPress={() => {}}
-        // onPress={() => {
-        //   login(email, password);
-        // }}
+        onPress={() => {
+          login(email, password);
+        }}
       />
 
       <TouchableOpacity
