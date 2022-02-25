@@ -28,11 +28,11 @@ const dots = ({ selected }) => {
         height: 5,
         marginHorizontal: 3,
         backgroundColor,
+        borderRadius: 5,
       }}
     />
   );
 };
-
 
 export default function OnboardingScreen({ navigation }) {
   return (
