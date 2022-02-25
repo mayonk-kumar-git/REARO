@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-// import React, { useState, useContext } from "react";
-import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import React, { useState, useContext } from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 // ---------------------------------------------------------------------------
 import FormInput from "../components/FormInput";
@@ -9,15 +8,16 @@ import SocialButton from "../components/SocialButton";
 // import { AuthContext } from "../navigation/AuthProvider";
 // ---------------------------------------------------------------------------
 
-export default function LoginScreen({ navigation }) {
+export default function SignupScreen({ navigation }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
 
-  // const { login } = useContext(AuthContext);
+  // const { register } = useContext(AuthContext);
+
   return (
     <View style={styles.container}>
-      <Image source={require("../assets/logo.png")} style={styles.logo} />
-      <Text style={styles.text}>Social App</Text>
+      <Text style={styles.text}>Create an Account</Text>
       <FormInput
         placeholderText="Email"
         iconType="user"
@@ -34,23 +34,46 @@ export default function LoginScreen({ navigation }) {
         labelValue={password}
         onChangeText={(userPassword) => setPassword(userPassword)}
       />
+      <FormInput
+        placeholderText="Confirm Password"
+        iconType="lock"
+        secureTextEntry={true}
+        labelValue={confirmPassword}
+        onChangeText={(userPassword) => setConfirmPassword(userPassword)}
+      />
       <FormButton
-        buttonTitle="Sign In"
+        buttonTitle="Sign Up"
         onPress={() => {}}
-        // onPress={() => {
-        //   login(email, password);
-        // }}
+        // onPress={() => register(email, password)}
       />
 
-      <TouchableOpacity
-        style={styles.forgotButton}
-        onPress={() => alert("forgot passord pressed")}
-      >
-        <Text style={styles.navButtonText}>Forgot Password</Text>
-      </TouchableOpacity>
+      <View style={styles.textPrivate}>
+        <Text style={styles.color_textPrivate}>
+          By registering, you confirm that you accept our
+        </Text>
+        <TouchableOpacity
+          onPress={() => {
+            alert("Terms of service");
+          }}
+        >
+          <Text style={{ ...styles.color_textPrivate, color: "#e88832" }}>
+            Terms of service
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.color_textPrivate}> ans </Text>
+        <TouchableOpacity
+          onPress={() => {
+            alert("Privacy Policy");
+          }}
+        >
+          <Text style={{ ...styles.color_textPrivate, color: "#e88832" }}>
+            Privacy Policy
+          </Text>
+        </TouchableOpacity>
+      </View>
 
       <SocialButton
-        buttonTitle="Sign In with FaceBook"
+        buttonTitle="Sign Up with FaceBook"
         btnType="facebook"
         color="#4867aa"
         backgroundColor="#B5D3FD"
@@ -60,7 +83,7 @@ export default function LoginScreen({ navigation }) {
       />
 
       <SocialButton
-        buttonTitle="Sign In with Google"
+        buttonTitle="Sign Up with Google"
         btnType="google"
         color="#de4d41"
         backgroundColor="#f5e7ea"
@@ -70,11 +93,11 @@ export default function LoginScreen({ navigation }) {
       />
 
       <TouchableOpacity
-        style={styles.forgotButton}
-        onPress={() => navigation.navigate("Signup")}
+        style={styles.navButton}
+        onPress={() => navigation.navigate("Login")}
       >
         <Text style={styles.navButtonText}>
-          Don't have an account? Create here
+          Already have an account? Sign In
         </Text>
       </TouchableOpacity>
     </View>
@@ -88,28 +111,29 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 30,
-    paddingTop: 40,
-  },
-  logo: {
-    height: 150,
-    width: 140,
-    resizeMode: "cover",
-    marginBottom: 20,
   },
   text: {
-    fontSize: 28,
-    marginBottom: 10,
+    fontSize: 35,
+    marginBottom: 60,
     color: "#051d5f",
   },
   navButton: {
     marginTop: 15,
   },
-  forgotButton: {
-    marginVertical: 35,
-  },
   navButtonText: {
     fontSize: 18,
     fontWeight: "500",
     color: "#2e64e5",
+  },
+  textPrivate: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginVertical: 35,
+    justifyContent: "center",
+  },
+  color_textPrivate: {
+    fontSize: 13,
+    fontWeight: "400",
+    color: "grey",
   },
 });
