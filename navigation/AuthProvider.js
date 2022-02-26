@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import firebase from "firebase/compat/app";
+import * as firebase from "firebase";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVAZ1H72O6W69DyIkz58MqTiM5qGXAcT8",
@@ -10,11 +10,8 @@ const firebaseConfig = {
   appId: "1:823921504588:web:b8376c549db37a942bdfe9",
 };
 
-let app;
-if (firebase.apps.length === 0) {
-  app = firebase.initializeApp(firebaseConfig);
-} else {
-  app = firebase.app();
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
 }
 
 export const AuthContext = createContext();
@@ -28,14 +25,14 @@ export default function AuthProvider({ children }) {
         setUser,
         login: async (email, password) => {
           try {
-            await app.auth().signInWithEmailAndPassword(email, password);
+            await firebase.auth().signInWithEmailAndPassword(email, password);
           } catch (e) {
             console.log(e);
           }
         },
         register: async (email, password) => {
           try {
-            await app
+            await firebase
               .auth()
               .createUserWithEmailAndPassword(email, password)
               .then(() => {

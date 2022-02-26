@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { View, Text } from "react-native";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
+import * as firebase from "firebase";
 
 // ----------------------------------------------------------------------------
 import AuthStack from "./AuthStack";
