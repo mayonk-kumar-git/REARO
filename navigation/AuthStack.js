@@ -32,21 +32,24 @@ export default function AuthStack() {
   }
 
   return (
-    <Stack.Navigator initialRouteName={routeName}>
+    <Stack.Navigator
+      initialRouteName={routeName}
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
         name="Onboarding"
         component={OnboardingScreen}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Signup"
         component={SignupScreen}
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

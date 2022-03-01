@@ -60,7 +60,7 @@ export default function AuthProvider({ children }) {
         },
         logout: async () => {
           try {
-            await app.auth().signOut();
+            await firebase.auth().signOut();
           } catch (e) {
             console.log(e);
           }
