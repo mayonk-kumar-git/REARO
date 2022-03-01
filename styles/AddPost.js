@@ -1,4 +1,8 @@
+import React from "react";
+import { Image } from "react-native";
 import styled from "styled-components";
+
+import { windowWidth } from "../utils/Dimentions";
 
 export const InputWrapper = styled.View`
   flex: 1;
@@ -16,8 +20,20 @@ export const InputField = styled.TextInput`
   width: 90%;
 `;
 
+// export const AddImage = ({ ...props }) => {
+//   return (
+//     <Image
+//       style={{
+//         width: windowWidth * 0.9,
+//         height: windowWidth * 0.9,
+//         marginBottom:15,
+//       }}
+//       {...props}
+//     />
+//   );
+// };
 export const AddImage = styled.Image`
-  width: 100%;
+  width: 90%;
   height: 250px;
   margin-bottom: 15px;
 `;
