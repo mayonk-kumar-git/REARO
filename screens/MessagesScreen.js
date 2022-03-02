@@ -63,11 +63,13 @@ const messages = [
   },
 ];
 
-export default function MessagesScreen({navigation}) {
+export default function MessagesScreen({ navigation }) {
   function messageTiles(item) {
     const { userImg, userName, messageText, messageTime } = item;
     return (
-      <Card onPress={()=>navigation.navigate("Chat", {userName: item.userName})}>
+      <Card
+        onPress={() => navigation.navigate("Chat", { userName: item.userName })}
+      >
         <UserInfo>
           <UserImgWrapper>
             <UserImg source={userImg} />
