@@ -195,7 +195,7 @@ export default function AppStack() {
         name="Chat"
         component={ChatScreen}
         options={({ route }) => ({
-          title: route.params.userName,
+          title: route.params ? route.params.userName : "User Name",
           headerTitleAlign: "center",
           headerBackTitleVisible: false,
           headerBackImage: () => (

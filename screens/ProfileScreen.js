@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-	Alert,
+  Alert,
 } from "react-native";
 import * as firebase from "firebase";
 
@@ -63,8 +63,14 @@ export default function ProfileScreen({ navigation, route }) {
           console.log("Total Posts Profile Screen : ", querySnapshot.size);
 
           querySnapshot.forEach((doc) => {
-            const { post, postImg, postTime, likes, comments, userId } =
-              doc.data();
+            const {
+              post,
+              postImg,
+              postTime,
+              likes,
+              comments,
+              userId,
+            } = doc.data();
             list.push({
               id: doc.id,
               //if the field name is same as the value name we can simply write the value. for example : instead of -- userId : userId, i can write only userId. But i prefer the first way of writting
@@ -216,9 +222,17 @@ export default function ProfileScreen({ navigation, route }) {
               <>
                 <TouchableOpacity
                   style={styles.userBtn}
-                  onPress={() => {
-                    alert("message button pressed");
-                  }}
+									// navigation.navigate("ScreenName", {route})
+                  onPress={() =>
+                    navigation.navigate("Chat", {
+                      userName: userData
+                        ? `${userData.fname} ${userData.lname}`
+                        : "UserName",
+                    })
+                  }
+                  // onPress={() => {
+                  //   alert("message button pressed");
+                  // }}
                 >
                   <Text style={styles.userBtnTxt}>Messages</Text>
                 </TouchableOpacity>
