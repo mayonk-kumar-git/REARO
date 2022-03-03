@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Alert,
+  RefreshControl,
 } from "react-native";
 import * as firebase from "firebase";
 
@@ -22,6 +23,7 @@ export default function ProfileScreen({ navigation, route }) {
   const [loading, setLoading] = useState(true);
   const [deleted, setDeleted] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
     fetchPost();
@@ -168,6 +170,12 @@ export default function ProfileScreen({ navigation, route }) {
     );
   }
 
+  function handleRefresh() {
+    setIsRefreshing(true);
+    fetchPost();
+    setIsRefreshing(false);
+  }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <ScrollView
@@ -179,6 +187,9 @@ export default function ProfileScreen({ navigation, route }) {
           paddingBottom: 20,
         }}
         showVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={isRefreshing} onRefresh={handleRefresh} />
+        }
       >
         <Image
           style={styles.userImg}
@@ -222,7 +233,7 @@ export default function ProfileScreen({ navigation, route }) {
               <>
                 <TouchableOpacity
                   style={styles.userBtn}
-									// navigation.navigate("ScreenName", {route})
+                  // navigation.navigate("ScreenName", {route})
                   onPress={() =>
                     navigation.navigate("Chat", {
                       userName: userData

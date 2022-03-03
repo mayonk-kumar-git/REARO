@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Alert } from "react-native";
+import { Alert, RefreshControl, StyleSheet, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import * as firebase from "firebase";
 
 // ---------------------------------------------------------------
 import PostCard from "../components/PostCard";
-// ---------------------------------------------------------------
 import { Container } from "../styles/FeedStyles";
 // ---------------------------------------------------------------
 
@@ -13,6 +12,7 @@ export default function HomeScreen({ navigation }) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [deleted, setDeleted] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
     if (deleted) {
@@ -24,6 +24,12 @@ export default function HomeScreen({ navigation }) {
   useEffect(() => {
     fetchPost();
   }, []);
+
+  function handleRefresh() {
+    setIsRefreshing(true);
+    fetchPost();
+    setIsRefreshing(false);
+  }
 
   async function fetchPost() {
     try {
@@ -157,7 +163,22 @@ export default function HomeScreen({ navigation }) {
         )}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            enabled={true}
+            refreshing={isRefreshing}
+            onRefresh={handleRefresh}
+          />
+        }
       />
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f2f5fe",
+    padding: 10,
+  },
+});

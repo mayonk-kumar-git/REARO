@@ -20,7 +20,7 @@ const messages = [
   {
     id: "1",
     userName: "Lois Lane",
-    userImg: require("../assets/users/user1.jpg"),
+    userImg: require("../assets/users/user2.jpg"),
     messageTime: "4 min ago",
     messageText: "is it a bird? is it a plane? it's superman!!",
   },

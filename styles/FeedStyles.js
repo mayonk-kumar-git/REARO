@@ -1,9 +1,6 @@
-import React from "react";
-import { View } from "react-native";
 import styled from "styled-components";
-import { windowWidth } from "../utils/Dimentions";
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #f2f5fe;
   padding: 5px 20px;
