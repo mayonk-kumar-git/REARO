@@ -45,4 +45,4 @@ def unique_locations():
 # 3. type "ipconfig" in your powershell --  you get a lot of option but we are looking for IPv4 Address (but there are two different IPv4 Address values so i generally dont prefer this one)
 # --------------------------------------------------------------------------------------
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="192.168.94.218")
+    app.run(debug=True, port=5000, host="192.168.137.218")
