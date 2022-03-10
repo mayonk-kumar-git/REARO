@@ -23,22 +23,35 @@ This application is built using React Native Expo. To run the application on a l
 ```
 After running this command you can either run the application on an emulator or download EXPO GO app on your phone and scan the QR code to run it on your phone.
 
+To start the flask api for price prediction feature navigate to the api directory and run
+(** Remember to change the host of the api in main.py to the same host where your app is running, you can find the host details once you run the expo start command)
+
+for windows
+```bash
+  python main.py
+```
+
+for MacOs
+```bash
+  python3 main.py
+```
+
 ## Screenshots
 
 ### Onboarding Screen
-<img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115327_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115334_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115341_Expo%20Go.jpg?raw=true" width="300" /> 
+<img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115327_Expo%20Go.jpg" width="300" />  <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115334_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115341_Expo%20Go.jpg?raw=true" width="300" /> 
 
 ### Login and Registration Screen
-<img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115401_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115412_Expo%20Go.jpg?raw=true" width="300" /> 
+<img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115401_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115412_Expo%20Go.jpg?raw=true" width="300" /> 
 
 ### Home Feeds Screen
-<img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115454_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115507_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115811_Expo%20Go.jpg?raw=true" width="300" /> 
+<img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115454_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115507_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115811_Expo%20Go.jpg?raw=true" width="300" /> 
 
 ### Messages and Chat Screen
-<img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115521_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115558_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115607_Expo%20Go.jpg?raw=true" width="300" /> 
+<img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115521_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115558_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115607_Expo%20Go.jpg?raw=true" width="300" /> 
 
 ### Prediction Screen
-<img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115619_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115628_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115644_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115948_Expo%20Go.jpg?raw=true" width="300" />
+<img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115619_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115628_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115644_Expo%20Go.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115948_Expo%20Go.jpg?raw=true" width="300" />
 
 ### Profile Screen
-<img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115735_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115750_Permission%20controller.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/real-estate-social-media/blob/main/Screenshots/Screenshot_20211225-115759_Expo%20Go.jpg?raw=true" width="300" />
+<img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115735_Expo%20Go.jpg?raw=true" width="300" />  <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115750_Permission%20controller.jpg?raw=true" width="300" /> <img src="https://github.com/mayonk-kumar-git/REARO/blob/master/Screenshots/Screenshot_20211225-115759_Expo%20Go.jpg?raw=true" width="300" />
